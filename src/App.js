@@ -4,13 +4,22 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Inventory from './components/Inventory/Inventory';
+import LoginPage from './components/LoginPage/LoginPage';
+import ManageInventory from './components/ManageInventory/ManageInventory';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
-    <div>
+    <div className='flex flex-col min-h-screen'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/login' element={<LoginPage></LoginPage>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
