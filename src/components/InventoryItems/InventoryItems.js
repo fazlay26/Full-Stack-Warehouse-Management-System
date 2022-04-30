@@ -6,7 +6,7 @@ const InventoryItems = () => {
     const [items, setItems] = useState([])
     const sixItems = items.slice(0, 6)
     useEffect(() => {
-        fetch('items.json')
+        fetch('http://localhost:5000/info')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
@@ -16,7 +16,7 @@ const InventoryItems = () => {
             <div data-aos="fade-down-left" className=' py-10 flex justify-center mx-8 '>
                 <div className=' z-0 md:grid grid-cols-3 gap-5 w-fit'>
                     {
-                        sixItems.map(item => <InventoryItem key={item.id}
+                        sixItems.map(item => <InventoryItem key={item._id}
                             item={item}
                         ></InventoryItem>)
                     }
