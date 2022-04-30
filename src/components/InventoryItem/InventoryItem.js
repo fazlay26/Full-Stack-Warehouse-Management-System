@@ -12,7 +12,7 @@ const InventoryItem = (props) => {
             <p className='pb-5 '>quantity:{quantity}</p>
             <p className='pb-5 '>supplier:{supplier}</p>
             <div className=' bottom-2 left-1'>
-                <Link to={`/inventory/${id}`} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded pb-3'>Update</Link>
+                <Link to={`/inventory/${id}`} className='bg-gradient-to-r from-orange-300 to-orange-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded pb-3'>Update</Link>
             </div>
 
         </div>
