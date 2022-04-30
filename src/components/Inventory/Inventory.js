@@ -32,7 +32,6 @@ const Inventory = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                alert('users added succesfully')
             })
     }
     const increaseQuantity = (e) => {
@@ -42,24 +41,27 @@ const Inventory = () => {
 
         const inputQuantity = e.target.inputQuantity.value
         console.log(inputQuantity);
-        const newQuantity = parseInt(quantity1) + parseInt(inputQuantity)
-        setQuantity(newQuantity)
-
-        const item = { newQuantity }
-        // console.log(item);
-        const url = `http://localhost:5000/info/${id}`;
-        fetch(url, {
-            method: 'PUT',  //put holo jodi user na thake tahole add korbe ar jodi thake tahole update korbe
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(item),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                alert('users added succesfully')
+        if (inputQuantity) {
+            const newQuantity = parseInt(quantity1) + parseInt(inputQuantity)
+            setQuantity(newQuantity)
+            const item = { newQuantity }
+            // console.log(item);
+            const url = `http://localhost:5000/info/${id}`;
+            fetch(url, {
+                method: 'PUT',  //put holo jodi user na thake tahole add korbe ar jodi thake tahole update korbe
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(item),
             })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('users added succesfully')
+                })
+
+        }
+
 
     }
     return (
