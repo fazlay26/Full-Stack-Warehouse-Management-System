@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Inventory from './components/Inventory/Inventory';
 import LoginPage from './components/LoginPage/LoginPage';
 import ManageInventory from './components/ManageInventory/ManageInventory';
+import MyItems from './components/MyItems/MyItems';
 import SignUp from './components/SignUp/SignUp';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
         <Route path='/addItem' element={<AddItem></AddItem>}></Route>
+        <Route path='/myItem' element={<MyItems></MyItems>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
