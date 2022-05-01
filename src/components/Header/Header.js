@@ -17,16 +17,16 @@ const Header = () => {
                 </div>
             </div>
             <div className='md:flex gap-4 text-xl'>
-                <ActiveLink to={'/Home'}>Home</ActiveLink>
+                <ActiveLink className="hover-underline-animation" to={'/Home'}>Home</ActiveLink>
                 {/* <ActiveLink to={'/login'}>Login</ActiveLink> */}
                 {/* <CustomLink to={'/Login'}>Login</CustomLink> */}
-                {user ? <button onClick={() => signOut(auth)}>LogOut ({user.email})</button> : <ActiveLink to={'/Login'}>Login</ActiveLink>
+                {user ? <button className='hover-underline-animation' onClick={() => signOut(auth)}>LogOut ({user.email})</button> : <ActiveLink to={'/Login'}>Login</ActiveLink>
                 }
-                {user ? <ActiveLink to={'/myItem'}>My Item</ActiveLink> : ''
+                {user ? <ActiveLink className="hover-underline-animation" to={'/myItem'}>My Item</ActiveLink> : ''
                 }
-                {user ? <ActiveLink to={'/manageInventory'}>Manage Items</ActiveLink> : ''
+                {user ? <ActiveLink className="hover-underline-animation" to={'/manageInventory'}>Manage Items</ActiveLink> : ''
                 }
-                {user ? <ActiveLink to={'/addItem'}>Add Items</ActiveLink> : ''
+                {user ? <ActiveLink className="hover-underline-animation" to={'/addItem'}>Add Items</ActiveLink> : ''
                 }
 
                 <ActiveLink to={'/About'}>About Me</ActiveLink>

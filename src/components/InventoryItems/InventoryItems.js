@@ -31,7 +31,7 @@ const InventoryItems = () => {
                     </div>
                     <div className='flex justify-center mb-10'>
                         <div>
-                            <Link to={'/manageInventory'} className='w-1/6 p-4 rounded-lg  bg-orange-500'><span className='text-slate-50'>Manage Inventories</span></Link>
+                            <Link to={'/manageInventory'} className='w-1/6 p-4 rounded-lg  bg'><span className='text-slate-50 font-bold'>Manage Inventories</span></Link>
                         </div>
                     </div>
 
