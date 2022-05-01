@@ -12,12 +12,15 @@ const Inventory = () => {
 
     const [inventoryItem] = useInventory(id)
 
-    let [quantity1, setQuantity] = useState(5)
+    let [quantity1, setQuantity] = useState(1)
 
 
     const reduceQuantity = () => {
-        let newQuantity = quantity1 - 1
+        //const deliverd=inventoryItem.quantity
+
+        inventoryItem.quantity = inventoryItem.quantity - quantity1
         //console.log(newQuantity);
+        const newQuantity = inventoryItem.quantity
         setQuantity(newQuantity)
         console.log(setQuantity);
 
@@ -46,7 +49,8 @@ const Inventory = () => {
         const inputQuantity = e.target.inputQuantity.value
         console.log(inputQuantity);
         if (inputQuantity) {
-            const newQuantity = parseInt(quantity1) + parseInt(inputQuantity)
+            inventoryItem.quantity = parseInt(inventoryItem.quantity) + parseInt(inputQuantity)
+            const newQuantity = inventoryItem.quantity
             setQuantity(newQuantity)
             const item = { newQuantity }
             // console.log(item);
@@ -81,7 +85,7 @@ const Inventory = () => {
                             <h1 className='text-gray-100'>name:{inventoryItem.name}</h1>
                             <p className='text-gray-100'>{inventoryItem.description}</p>
                             <p className='text-gray-100'>Price:{inventoryItem.price}</p>
-                            <p className='text-gray-100'>quantity:{quantity1}</p>
+                            <p className='text-gray-100'>quantity:{inventoryItem.quantity}</p>
                             {
                                 quantity1 === 0 ? <p className='rounded-lg p-1 font-bold text-gray-100 border w-1/12'>Sold Out</p> : ''
                             }
