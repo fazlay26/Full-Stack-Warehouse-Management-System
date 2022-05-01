@@ -1,7 +1,9 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddItem = () => {
     const [user] = useAuthState(auth);
@@ -19,6 +21,7 @@ const AddItem = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                toast('Item Added Done')
             })
     };
     return (
@@ -36,6 +39,9 @@ const AddItem = () => {
                     <input className='text-slate-50 bg font-semibold border w-1/2 p-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500' type="submit" />
                 </div>
             </form>
+            <ToastContainer
+                position="top-center"
+            />
         </div>
     );
 };

@@ -8,7 +8,7 @@ import ActiveLink from '../ActiveLink/ActiveLink';
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
     return (
-        <div className='sticky top-0 bg-white px-12 py-5 flex justify-center md:justify-between z-10 items-center'>
+        <div className='sticky top-0 bg-white px-12 py-5 flex  justify-center md:justify-between z-10 items-center'>
             <div className='hidden
              md:block'>
                 <div className='flex items-center'>
@@ -16,7 +16,7 @@ const Header = () => {
                     <Link className='font-sans font-bold text-xl text-gray-600' to={'/'}>Bike manager</Link>
                 </div>
             </div>
-            <div className='flex gap-4 text-xl'>
+            <div className='md:flex gap-4 text-xl'>
                 <ActiveLink to={'/Home'}>Home</ActiveLink>
                 {/* <ActiveLink to={'/login'}>Login</ActiveLink> */}
                 {/* <CustomLink to={'/Login'}>Login</CustomLink> */}

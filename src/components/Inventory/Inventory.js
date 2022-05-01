@@ -13,10 +13,7 @@ const Inventory = () => {
     const [inventoryItem] = useInventory(id)
 
     let [quantity1, setQuantity] = useState(5)
-    if (quantity1 === 0) {
 
-
-    }
 
     const reduceQuantity = () => {
         let newQuantity = quantity1 - 1
@@ -78,8 +75,8 @@ const Inventory = () => {
         <>
             {
                 loading ? <Spinner></Spinner> : <div>
-                    <div className='flex justify-center items-center'>
-                        <div className='bg border w-1/2 px-5 py-5 pb-10 drop-shadow-md rounded-lg border-orange-300'>
+                    <div className='md:flex justify-center items-center'>
+                        <div className='bg ml-10   md: borderw-4/5  px-5 py-5 pb-10 drop-shadow-md rounded-lg border-orange-300'>
                             <h1 className='text-gray-100'>Items Id:{id}</h1>
                             <h1 className='text-gray-100'>name:{inventoryItem.name}</h1>
                             <p className='text-gray-100'>{inventoryItem.description}</p>
