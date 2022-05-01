@@ -7,6 +7,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import './LoginPage.css'
 import 'react-toastify/dist/ReactToastify.css';
 import Spinner from '../Spinner/Spinner';
+import axios from 'axios';
 
 const LoginPage = () => {
     const [loading, setLoading] = useState(false)
@@ -67,10 +68,13 @@ const LoginPage = () => {
         }
 
     }
-    const handleLogin = e => {
+    const handleLogin = async e => {
         setLoading(true)
         e.preventDefault()
-        signInWithEmailAndPassword(userInfo.email, userInfo.pass)
+        const email = userInfo.email
+        await signInWithEmailAndPassword(userInfo.email, userInfo.pass)
+        const { data } = await axios.post('http://localhost:5000/login', { email })
+        localStorage.setItem('accessToken', data.accesToken)
     }
     return (
         <>
