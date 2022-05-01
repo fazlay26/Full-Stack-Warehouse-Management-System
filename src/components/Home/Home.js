@@ -25,9 +25,9 @@ const Home = () => {
                 <div>
                     <InventoryItems></InventoryItems>
                 </div>
-                <div>
+                {/* <div>
                     <AllBrand></AllBrand>
-                </div>
+                </div> */}
                 <div>
                     <ExtraSection></ExtraSection>
                 </div>
