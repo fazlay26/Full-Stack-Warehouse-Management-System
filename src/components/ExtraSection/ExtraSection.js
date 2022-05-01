@@ -12,7 +12,7 @@ const ExtraSection = () => {
                     <div className=' md:flex mx-auto items-center'>
                         <div className='mx-5 my-5'>
                             <h1 className='text-3xl font-semibold'>RIDER THRILLING EFFECT</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, natus.</p>
+                            <p>Aprilia Tuareg 660</p>
                             <button className='text-xl font-semibold hover-underline-animation'>READ MORE</button>
                         </div>
                     </div>
@@ -20,8 +20,8 @@ const ExtraSection = () => {
                 <div className='md:flex'>
                     <div className='md:flex mx-auto items-center '>
                         <div className='mx-5 my-5'>
-                            <h1 className='text-3xl font-semibold'>RIDER THRILLING EFFECT</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, natus.</p>
+                            <h1 className='text-3xl font-semibold'>ADVENTURES BIKE ENGINE</h1>
+                            <p>Aprilia Tuareg 660</p>
                             <button className='text-xl font-semibold hover-underline-animation'>READ MORE</button>
                         </div>
                     </div>

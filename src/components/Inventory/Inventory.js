@@ -13,11 +13,16 @@ const Inventory = () => {
     const [inventoryItem] = useInventory(id)
 
     let [quantity1, setQuantity] = useState(5)
+    if (quantity1 === 0) {
+
+
+    }
+
     const reduceQuantity = () => {
         let newQuantity = quantity1 - 1
         //console.log(newQuantity);
         setQuantity(newQuantity)
-        console.log(newQuantity);
+        console.log(setQuantity);
 
         const item = { newQuantity }
         // console.log(item);
@@ -60,7 +65,7 @@ const Inventory = () => {
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    alert('users added succesfully')
+                    alert('Items Addeded')
                     setLoading(false)
 
                 })
@@ -80,6 +85,9 @@ const Inventory = () => {
                             <p className='text-gray-100'>{inventoryItem.description}</p>
                             <p className='text-gray-100'>Price:{inventoryItem.price}</p>
                             <p className='text-gray-100'>quantity:{quantity1}</p>
+                            {
+                                quantity1 === 0 ? <p className='rounded-lg p-1 font-bold text-gray-100 border w-1/12'>Sold Out</p> : ''
+                            }
                             <p className='text-gray-100'>Supplier:{inventoryItem.supplier}</p>
                             <div>
                                 <button onClick={reduceQuantity} className='border px-4 my-4 drop-shadow-lg rounded-lg text-gray-100 font-bold'>Deliverd</button>

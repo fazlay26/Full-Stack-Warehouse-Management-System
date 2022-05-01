@@ -5,15 +5,20 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
-const MyItems = () => {
+const MyItems = ({ children }) => {
     const [myItems, setMyItems] = useState([])
-    const [user] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
     let navigate = useNavigate();
 
     useEffect(() => {
         const getMyItems = async () => {
             const email = user?.email
             const url = `http://localhost:5000/myitem?email=${email}`
+            if (loading) {
+                return children
+            }
+
+
             try {
                 const { data } = await axios.get(url, {
                     headers: {
@@ -22,16 +27,18 @@ const MyItems = () => {
                 })
                 setMyItems(data)
             }
+
+
             catch (error) {
                 if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth)
                     navigate('/login')
-
                 }
 
             }
         }
         getMyItems()
+
 
     }, [user])
     const handleDelete = id => {
