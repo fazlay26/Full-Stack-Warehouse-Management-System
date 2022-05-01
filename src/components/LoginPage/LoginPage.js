@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './LoginPage.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = () => {
     let navigate = useNavigate();
@@ -23,8 +25,9 @@ const LoginPage = () => {
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        hookError,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const handleEmail = e => {
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value);
@@ -53,6 +56,14 @@ const LoginPage = () => {
     }
     if (user) {
         navigate(from, { replace: true })
+    }
+    const resetPass = async () => {
+        if (userInfo.email) {
+
+            await sendPasswordResetEmail(userInfo.email);
+            toast('please check your email');
+        }
+
     }
     const handleLogin = e => {
         e.preventDefault()
@@ -84,8 +95,8 @@ const LoginPage = () => {
                         </div>
                         {/* {errors?.pass && <p className="text-red-600">{errors.pass}</p>} */}
                     </div>
-                    <a href="#" className="text-xs text-white float-right mb-4">Forgot Password?</a>
-                    {/* <p className='text-red-600'>{hookError && hookError.message}</p> */}
+                    <a href="#" onClick={resetPass} className="text-xs text-white float-right mb-4">Forgot Password?</a>
+                    <p className='text-red-800 font-semibold'>{hookError && hookError.message}</p>
                     <div className='flex justify-center'>
                         <button type="submit"
                             className="w-1/4 py-2 my-4  rounded-full bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
@@ -96,6 +107,9 @@ const LoginPage = () => {
                 <div className='my-3'>
                     <SocialLogin></SocialLogin>
                 </div>
+                <ToastContainer
+                    position="top-center"
+                />
 
 
             </div>

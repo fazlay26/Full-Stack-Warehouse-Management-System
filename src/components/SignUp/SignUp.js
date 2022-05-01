@@ -3,6 +3,8 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../firebase.init';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     let navigate = useNavigate();
@@ -23,7 +25,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const handleEmail = e => {
         const emailRegex = /\S+@\S+\.\S+/;
         const validEmail = emailRegex.test(e.target.value);
@@ -63,6 +65,7 @@ const SignUp = () => {
     const handleSignup = e => {
         e.preventDefault()
         createUserWithEmailAndPassword(userInfo.email, userInfo.pass);
+        toast('verification email sent')
     }
 
     return (
@@ -109,6 +112,9 @@ const SignUp = () => {
                 <SocialLogin></SocialLogin>
 
             </div>
+            <ToastContainer
+                position="top-center"
+            />
 
 
         </div>
