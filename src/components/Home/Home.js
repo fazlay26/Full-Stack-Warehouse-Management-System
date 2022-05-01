@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import AllBrand from '../AllBrand/AllBrand';
+import ExtraSection from '../ExtraSection/ExtraSection';
+import GoogleMap from '../GoogleMap/GoogleMap';
 import Header from '../Header/Header';
 import InventoryItems from '../InventoryItems/InventoryItems';
 import OurFacilities from '../OurFacilities/OurFacilities';
@@ -25,6 +27,12 @@ const Home = () => {
                 </div>
                 <div>
                     <AllBrand></AllBrand>
+                </div>
+                <div>
+                    <ExtraSection></ExtraSection>
+                </div>
+                <div>
+                    <GoogleMap></GoogleMap>
                 </div>
                 <div>
                     <OurFacilities></OurFacilities>

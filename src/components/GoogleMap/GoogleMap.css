@@ -1,0 +1,5 @@
+iframe {
+    filter: invert(100%);
+    width: 80%;
+    height: 500px;
+}
