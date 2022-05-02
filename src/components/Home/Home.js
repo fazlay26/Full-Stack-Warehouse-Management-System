@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import AllBrand from '../AllBrand/AllBrand';
+
+
 import ExtraSection from '../ExtraSection/ExtraSection';
 import GoogleMap from '../GoogleMap/GoogleMap';
-import Header from '../Header/Header';
+
 import InventoryItems from '../InventoryItems/InventoryItems';
 import OurFacilities from '../OurFacilities/OurFacilities';
-import Spinner from '../Spinner/Spinner';
+
 import './Home.css'
 
 const Home = () => {
+
     return (
         <>
             <div>

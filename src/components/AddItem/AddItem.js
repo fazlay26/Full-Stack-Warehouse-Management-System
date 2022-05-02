@@ -29,7 +29,7 @@ const AddItem = () => {
             <h1 className='text-center mb-8 text-2xl font-bold'>Add Item</h1>
             <form className='flex flex-col  w-1/2 mx-auto border-2   p-10 rounded-lg border-orange-500' onSubmit={handleSubmit(onSubmit)}>
                 <input className='border-2 mb-4 rounded-md' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
-                <input className='border-2 mb-4 rounded-md' value={user.email} placeholder='Email' {...register("email", { required: true, maxLength: 20 })} />
+                <input className='border-2 mb-4 rounded-md' value={user?.email} placeholder='Email' {...register("email", { required: true, maxLength: 20 })} />
                 <textarea className='border-2 mb-4 rounded-md' placeholder='Description'{...register("description",)} />
                 <input className='border-2 mb-4 rounded-md' placeholder='Price' type="number" {...register("price",)} />
                 <input className='border-2 mb-4 rounded-md' placeholder='Quantity' type="number" {...register("quantity",)} />

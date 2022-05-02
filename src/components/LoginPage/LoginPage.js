@@ -73,6 +73,7 @@ const LoginPage = () => {
         e.preventDefault()
         const email = userInfo.email
         await signInWithEmailAndPassword(userInfo.email, userInfo.pass)
+        setLoading(false)
         const { data } = await axios.post('http://localhost:5000/login', { email })
         localStorage.setItem('accessToken', data.accesToken)
     }

@@ -62,13 +62,20 @@ const SignUp = () => {
         }
     }
     if (user) {
+
         navigate(from, { replace: true })
+
     }
+
     const handleSignup = e => {
+
         setLoading(true)
         e.preventDefault()
+
         createUserWithEmailAndPassword(userInfo.email, userInfo.pass);
-        toast('verification email sent')
+        toast('email verification sent')
+
+
     }
 
     return (
@@ -118,7 +125,7 @@ const SignUp = () => {
 
                     </div>
                     <ToastContainer
-                        position="top-center"
+                        position="top-right"
                     />
 
 

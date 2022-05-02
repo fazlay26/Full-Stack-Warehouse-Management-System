@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useInventory from '../../Hooks/UseInventory';
 import Spinner from '../Spinner/Spinner';
 import './Inventory.css'
@@ -107,6 +107,11 @@ const Inventory = () => {
                                 <br />
                                 <input className='border   px-4 my-4 drop-shadow-lg text-gray-100 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 font-bold' type="submit" value="add" />
                             </form>
+                        </div>
+                    </div>
+                    <div className='flex justify-center mb-10'>
+                        <div>
+                            <Link to={'/manageInventory'} className='w-1/6 p-4 rounded-lg  bg'><span className='text-slate-50 font-bold'>Manage Inventories</span></Link>
                         </div>
                     </div>
 

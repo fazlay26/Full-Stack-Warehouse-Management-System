@@ -29,7 +29,7 @@ const Header = () => {
                 {user ? <ActiveLink className="hover-underline-animation" to={'/addItem'}>Add Items</ActiveLink> : ''
                 }
 
-                <ActiveLink to={'/blogs'}>Blogs</ActiveLink>
+                <ActiveLink className="hover-underline-animation" to={'/blogs'}>Blogs</ActiveLink>
 
 
             </div>
