@@ -71,7 +71,7 @@ const LoginPage = () => {
     const handleLogin = async e => {
         setLoading(true)
         e.preventDefault()
-        const email = userInfo.email
+        const email = userInfo?.email
         await signInWithEmailAndPassword(userInfo.email, userInfo.pass)
         setLoading(false)
         const { data } = await axios.post('https://stark-oasis-89448.herokuapp.com/login', { email })

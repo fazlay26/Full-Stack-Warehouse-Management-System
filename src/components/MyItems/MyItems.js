@@ -11,12 +11,13 @@ const MyItems = ({ children }) => {
     let navigate = useNavigate();
 
     useEffect(() => {
+        if (loading) {
+            return children
+        }
         const getMyItems = async () => {
             const email = user?.email
             const url = `https://stark-oasis-89448.herokuapp.com/myitem?email=${email}`
-            if (loading) {
-                return children
-            }
+
 
 
             try {
