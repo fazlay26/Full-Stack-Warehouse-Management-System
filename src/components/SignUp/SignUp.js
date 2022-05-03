@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Spinner from '../Spinner/Spinner';
+import { async } from '@firebase/util';
 
 const SignUp = () => {
     const [loading, setLoading] = useState(false)
@@ -62,17 +63,15 @@ const SignUp = () => {
         }
     }
     if (user) {
-
         navigate(from, { replace: true })
-
     }
 
-    const handleSignup = e => {
 
+    const handleSignup = async e => {
         setLoading(true)
         e.preventDefault()
-
-        createUserWithEmailAndPassword(userInfo.email, userInfo.pass);
+        await createUserWithEmailAndPassword(userInfo.email, userInfo.pass);
+        setLoading(false)
         toast('email verification sent')
 
 
@@ -96,7 +95,7 @@ const SignUp = () => {
                                     <input onChange={handleEmail} type='text' placeholder="Email"
                                         className="md:-mx-6    w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
                                 </div>
-                                {/* {errors?.email && <p className="text-red-600">{errors.email}</p>} */}
+                                {errors?.email && <p className="text-red-600">{errors.email}</p>}
                             </div>
                             <div className="w-full mb-2">
                                 <div className=" relative flex items-center">
@@ -104,7 +103,7 @@ const SignUp = () => {
                                         className="md:-mx-6  w-full border rounded px-3 py-2 text-gray-700 focus:outline-none" required />
                                     {/* <img onClick={() => setShowPass(!showPass)} className='cursor-pointer eye w-1/12 h-1/12 absolute  right-6' src="https://cdn-icons-png.flaticon.com/512/633/633633.png" alt="" /> */}
                                 </div>
-                                {/* {errors?.pass && <p className="text-red-600">{errors.pass}</p>} */}
+                                {errors?.pass && <p className="text-red-600">{errors.pass}</p>}
                             </div>
                             <div className="w-full mb-2">
                                 <div className=" relative flex items-center">
@@ -114,11 +113,12 @@ const SignUp = () => {
                                 </div>
                                 {/* {errors?.pass && <p className="text-red-600">{errors.pass}</p>} */}
                             </div>
-                            {/* <p className='text-red-600'>{hookError && hookError.message}</p> */}
+
                             <div className='flex justify-center'>
                                 <button type="submit"
                                     className="w-1/4 py-2 my-4  rounded-full bg-cyan-500 text-gray-100  focus:outline-none">SignUp</button>
                             </div>
+                            <p className='text-red-800 font-semibold'>{hookError && hookError.message}</p>
                             <p className='pt-2 text-slate-50 font-semibold'>Already Have an Account??<Link className='underline underline-offset-1 text-slate-900' to={'/login'}>Please Login</Link></p>
                         </form>
                         <SocialLogin></SocialLogin>

@@ -18,7 +18,7 @@ const InventoryItems = () => {
         <>
             {
                 loading ? <Spinner></Spinner> : <div>
-                    <h1 className='text-5xl text-center underline underline-offset-1 text-neutral-800'>Inventory Items:{items.length}</h1>
+                    <h1 className='text-5xl text-center underline underline-offset-1 text-neutral-800'>Inventory Items:{sixItems.length}</h1>
                     <div data-aos="fade-down-left" className=' py-10 flex justify-center mx-8 '>
                         <div className=' z-0 md:grid grid-cols-3 gap-5 w-fit'>
                             {
