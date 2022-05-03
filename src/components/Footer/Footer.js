@@ -169,7 +169,7 @@ const Footer = () => {
                 </div>
                 <div class="text-center p-6 bg-slate-900">
                     <span>© 2021 Copyright:</span>
-                    <a class="text-white font-semibold" href="https://tailwind-elements.com/">Tailwind Elements</a>
+                    <a class="text-white font-semibold" href="https://tailwind-elements.com/">Bike Manager</a>
                 </div>
             </footer>
         </div>

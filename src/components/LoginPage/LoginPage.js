@@ -74,7 +74,7 @@ const LoginPage = () => {
         const email = userInfo.email
         await signInWithEmailAndPassword(userInfo.email, userInfo.pass)
         setLoading(false)
-        const { data } = await axios.post('http://localhost:5000/login', { email })
+        const { data } = await axios.post('https://stark-oasis-89448.herokuapp.com/login', { email })
         localStorage.setItem('accessToken', data.accesToken)
     }
     return (

@@ -8,7 +8,7 @@
 //     const handleDelete = id => {
 //         const proceed = window.confirm('are you sure you want to delete this item?')
 //         if (proceed) {
-//             const url = `http://localhost:5000/info/${id}`
+//             const url = `https://stark-oasis-89448.herokuapp.com/info/${id}`
 //             console.log(url);
 //             fetch(url, {
 //                 method: 'DELETE'

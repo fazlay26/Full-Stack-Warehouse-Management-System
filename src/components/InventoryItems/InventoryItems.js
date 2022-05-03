@@ -9,7 +9,7 @@ const InventoryItems = () => {
     const sixItems = items.slice(0, 6)
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/info')
+        fetch('https://stark-oasis-89448.herokuapp.com/info')
             .then(res => res.json())
             .then(data => setItems(data))
         setLoading(false)
