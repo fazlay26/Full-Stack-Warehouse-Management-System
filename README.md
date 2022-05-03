@@ -1,10 +1,16 @@
-# Getting Started with Create React App.
+# Bike Manager.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site Link [CLICK HERE](https://bike-manager-4766c.web.app/).
 
-## Available Scripts
+This website can be used for accounting of any product. I also have the option to update the stock and add new items. Overall my web site looks like e-commerce site but my web site is inventory management type web site.
 
-In the project directory, you can run:
+## My Websites Feautures:
+
+* my website is fully responsive
+* implement jwt and firebase authentication system
+* implement mongodb database
+* have added google map
+* i have secured the server side by 2 layers
 
 ### `npm start`
 
