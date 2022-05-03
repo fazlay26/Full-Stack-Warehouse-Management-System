@@ -1,7 +1,14 @@
 .banner {
     background-image: url('https://cdn.shopify.com/s/files/1/0461/8371/0869/files/sliderbg-3.jpg?v=1599305973');
     background-size: cover;
-    height: 800px;
     width: auto;
+    height: 800px;
 
+}
+
+@media only screen and (max-width: 480px) {
+    .banner {
+        width: 100%;
+        height: auto;
+    }
 }
