@@ -10,4 +10,4 @@ const useItems = () => {
 
     return [allItems, setAllItems]
 }
-export default useItems
+export default useItems;
