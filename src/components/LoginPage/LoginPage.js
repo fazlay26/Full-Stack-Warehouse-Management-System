@@ -110,7 +110,7 @@ const LoginPage = () => {
                             <button type="submit"
                                 className="w-1/4 py-2 my-4  rounded-full bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
                         </div>
-                        <p className='pt-2 text-slate-50 font-semibold'>New To Duffer Fitness??<Link className='underline underline-offset-1 text-slate-900' to={'/signup'}>Create An Account</Link></p>
+                        <p className='pt-2 text-slate-50 font-semibold'>New To Bike Manager??<Link className='underline underline-offset-1 text-slate-900' to={'/signup'}>Create An Account</Link></p>
                     </form>
 
                     <div className='my-3'>
