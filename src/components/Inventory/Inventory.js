@@ -18,11 +18,11 @@ const Inventory = () => {
     const reduceQuantity = () => {
         //const deliverd=inventoryItem.quantity
 
-        inventoryItem.quantity = inventoryItem.quantity - quantity1
+        inventoryItem.quantity = inventoryItem.quantity - 1
         //console.log(newQuantity);
         const newQuantity = inventoryItem.quantity
         setQuantity(newQuantity)
-        console.log(setQuantity);
+        console.log(newQuantity);
 
         const item = { newQuantity }
         // console.log(item);
