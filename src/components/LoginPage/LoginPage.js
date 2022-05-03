@@ -79,14 +79,14 @@ const LoginPage = () => {
     }
     return (
         <>
-            {loading ? <Spinner></Spinner> : <div className=' bg-gradient-to-r from-sky-500 to-indigo-500'>
-                <div className=" w-full  flex flex-col items-center  h-screen">
-                    <form onSubmit={handleLogin} className="w-full md:w-1/3">
-                        <div className="flex font-bold justify-center mt-6">
+            {loading ? <Spinner></Spinner> : <div className=' login-bg '>
+                <div className=" w-full  flex flex-col items-center  h-screen ">
+                    <form onSubmit={handleLogin} className="w-full md:w-1/3 login-box my-auto">
+                        <div className="flex font-bold justify-center mt-6 ">
                             <img className="h-20 w-20"
                                 src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/avatar.svg" alt='' />
                         </div>
-                        <h2 className="text-3xl text-center text-gray-700 mb-4">Login Form</h2>
+                        <h2 className="text-3xl text-center text-white mb-4">Login Form</h2>
                         <div className="px-12 pb-10" />
                         <div className="w-full mb-2">
                             <div className="flex items-center">
@@ -108,14 +108,15 @@ const LoginPage = () => {
                         <p className='text-red-800 font-semibold'>{hookError && hookError.message}</p>
                         <div className='flex justify-center'>
                             <button type="submit"
-                                className="w-1/4 py-2 my-4  rounded-full bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
+                                className="w-1/4 py-2 my-4  rounded-md bg-cyan-500 text-gray-100  focus:outline-none">LogIn</button>
                         </div>
-                        <p className='pt-2 text-slate-50 font-semibold'>New To Bike Manager??<Link className='underline underline-offset-1 text-slate-900' to={'/signup'}>Create An Account</Link></p>
+                        <p className='pt-2 text-slate-50 font-semibold'>New To Bike Manager??<Link className='underline underline-offset-1 text-cyan-400' to={'/signup'}>Create An Account</Link></p>
+                        <div className='my-3'>
+                            <SocialLogin></SocialLogin>
+                        </div>
                     </form>
 
-                    <div className='my-3'>
-                        <SocialLogin></SocialLogin>
-                    </div>
+
                     <ToastContainer
                         position="top-center"
                     />

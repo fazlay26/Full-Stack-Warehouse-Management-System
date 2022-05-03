@@ -80,14 +80,14 @@ const SignUp = () => {
     return (
         <>
             {
-                loading ? <Spinner></Spinner> : <div className=' bg-gradient-to-r from-violet-500 to-fuchsia-500'>
+                loading ? <Spinner></Spinner> : <div className=' login-bg'>
                     <div className="  w-full  flex flex-col items-center justify-center h-screen ">
-                        <form onSubmit={handleSignup} className="w-full md:w-1/3 border rounded-lg p-10 pb-10 ">
+                        <form onSubmit={handleSignup} className="w-full md:w-1/3  login-box">
                             <div className="flex font-bold justify-center mt-6">
                                 <img className="h-20 w-20"
                                     src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/avatar.svg" alt='' />
                             </div>
-                            <h2 className="text-3xl text-center text-gray-700 mb-4">Register Form</h2>
+                            <h2 className="text-3xl text-center text-white mb-4">Register Form</h2>
                             <div className="px-12 pb-10" />
                             <div className="w-full mb-2">
                                 <div className="flex items-center">
@@ -119,9 +119,10 @@ const SignUp = () => {
                                     className="w-1/4 py-2 my-4  rounded-full bg-cyan-500 text-gray-100  focus:outline-none">SignUp</button>
                             </div>
                             <p className='text-red-800 font-semibold'>{hookError && hookError.message}</p>
-                            <p className='pt-2 text-slate-50 font-semibold'>Already Have an Account??<Link className='underline underline-offset-1 text-slate-900' to={'/login'}>Please Login</Link></p>
+                            <p className='pt-2 text-slate-50 font-semibold'>Already Have an Account??<Link className='underline underline-offset-1 text-cyan-400' to={'/login'}>Please Login</Link></p>
+                            <SocialLogin></SocialLogin>
                         </form>
-                        <SocialLogin></SocialLogin>
+
 
                     </div>
                     <ToastContainer

@@ -19,8 +19,8 @@ const SocialLogin = () => {
     }
     return (
         <div>
-            <p className='font-medium text-slate-50'>Login With Social Media</p>
-            <div onClick={handleGoogleSignIn} className='flex justify-center items-center bg-sky-500 rounded-lg p-2 my-2'>
+            <p className='font-medium text-slate-50 text-center'>Login With Social Media</p>
+            <div onClick={handleGoogleSignIn} className='flex justify-center items-center bg-cyan-400 rounded-lg p-2 my-2'>
                 <img className='w-10 h-10' src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="" />
                 <button className=' w-full py-2 px-2'><span className='text-slate-50 text-xl font-medium'>Google</span>
                 </button>
