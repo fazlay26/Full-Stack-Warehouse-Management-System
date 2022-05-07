@@ -30,7 +30,7 @@ const AddItem = () => {
     };
     return (
         <div className=''>
-            <h1 className='text-center mb-8 text-2xl font-bold'>Add Item</h1>
+            <h1 className='text-center mb-8 text-2xl font-bold text-orange-400'>Add Item</h1>
             <form className='flex flex-col  w-1/2 mx-auto border-2   p-10 rounded-lg border-orange-500' onSubmit={handleSubmit(onSubmit)}>
                 <input className='border-2 mb-4 rounded-md' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} required />
                 <input className='border-2 mb-4 rounded-md' value={user?.email} placeholder='Email' {...register("email", { required: true, maxLength: 20 })} required />

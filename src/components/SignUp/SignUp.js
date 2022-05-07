@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Spinner from '../Spinner/Spinner';
-import { async } from '@firebase/util';
+import axios from 'axios';
 
 const SignUp = () => {
     const [loading, setLoading] = useState(false)
@@ -68,10 +68,13 @@ const SignUp = () => {
 
 
     const handleSignup = async e => {
+        const email = userInfo?.email
         setLoading(true)
         e.preventDefault()
         await createUserWithEmailAndPassword(userInfo.email, userInfo.pass);
         setLoading(false)
+        const { data } = await axios.post('https://stark-oasis-89448.herokuapp.com/login', { email })
+        localStorage.setItem('accessToken', data.accesToken)
         toast('email verification sent')
 
 

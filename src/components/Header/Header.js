@@ -13,7 +13,7 @@ const Header = () => {
              md:block'>
                 <div className='flex items-center'>
                     {/* <img className='w-1/12 h-1/2' src="https://cdn-icons-png.flaticon.com/512/2964/2964514.png" alt="" /> */}
-                    <Link className='font-sans font-bold text-xl text-gray-600' to={'/'}>Bike manager</Link>
+                    <Link className='font-sans font-bold text-xl text-gray-600' to={'/'}>Bike <span className='text-orange-400'>Manager</span></Link>
                 </div>
             </div>
             <div className='md:flex gap-4 text-xl'>

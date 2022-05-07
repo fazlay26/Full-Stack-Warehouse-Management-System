@@ -23,9 +23,9 @@ const ManageInventory = () => {
     }
     return (
         <div>
-            <h1 className='text-5xl text-center underline underline-offset-1 text-neutral-800'>All Items :{allItems.length}</h1>
+            <h1 className='text-5xl text-center underline underline-offset-1 decoration-orange-500 text-neutral-800'>All Items :{allItems.length}</h1>
             <div className='flex justify-center'>
-                <Link to={'/addItem'}><button className='border   p-3 my-4 drop-shadow-lg text-gray-100 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 font-bold'>Add Items</button></Link>
+                <Link to={'/addItem'}><button className='border  p-3 my-4 drop-shadow-lg text-gray-100 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 font-bold'>Add Items</button></Link>
             </div>
             <div data-aos="fade-down-left" className=' py-10 flex justify-center mx-8 '>
                 <div className=' z-0 md:grid grid-cols-3 gap-5 w-fit'>

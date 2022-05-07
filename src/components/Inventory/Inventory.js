@@ -101,11 +101,11 @@ const Inventory = () => {
 
                     <div className='flex justify-center'>
                         <div className=' border-2  p-10 mb-10 rounded-2xl drop-shadow-xl'>
-                            <h1 className='text-xl mb-2'>Restock The Items</h1>
+                            <h1 className='text-xl mb-2 font-semibold'>Restock The Items</h1>
                             <form onSubmit={increaseQuantity}>
                                 <input className='border rounded-md' type="number" name="inputQuantity" placeholder='place quantity' id="" />
                                 <br />
-                                <input className='border   px-4 my-4 drop-shadow-lg text-gray-100 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 font-bold' type="submit" value="add" />
+                                <input className='border   px-4 my-4 drop-shadow-lg text-gray-100 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 font-bold' type="submit" value="add" />
                             </form>
                         </div>
                     </div>
