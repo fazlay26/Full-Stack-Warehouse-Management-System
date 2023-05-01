@@ -10,7 +10,7 @@ const AddItem = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, e) => {
         console.log(data)
-        const url = `https://stark-oasis-89448.herokuapp.com/info`
+        const url = `https://bike-manager.onrender.com/info`
         fetch(url, {
             method: 'POST',
             headers: {

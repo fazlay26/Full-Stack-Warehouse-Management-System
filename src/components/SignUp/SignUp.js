@@ -73,7 +73,7 @@ const SignUp = () => {
         e.preventDefault()
         await createUserWithEmailAndPassword(userInfo.email, userInfo.pass);
         setLoading(false)
-        const { data } = await axios.post('https://stark-oasis-89448.herokuapp.com/login', { email })
+        const { data } = await axios.post('https://bike-manager.onrender.com/login', { email })
         localStorage.setItem('accessToken', data.accesToken)
         toast('email verification sent')
 

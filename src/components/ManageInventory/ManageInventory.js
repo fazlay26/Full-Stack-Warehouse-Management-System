@@ -7,7 +7,7 @@ const ManageInventory = () => {
     const handleDelete = id => {
         const proceed = window.confirm('are you sure you want to delete this item?')
         if (proceed) {
-            const url = `https://stark-oasis-89448.herokuapp.com/info/${id}`
+            const url = `https://bike-manager.onrender.com/info/${id}`
             console.log(url);
             fetch(url, {
                 method: 'DELETE'

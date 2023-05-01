@@ -27,7 +27,7 @@ const Inventory = () => {
         const item = { newQuantity }
         // console.log(item);
         setLoading(true)
-        const url = `https://stark-oasis-89448.herokuapp.com/info/${id}`;
+        const url = `https://bike-manager.onrender.com/info/${id}`;
         fetch(url, {
             method: 'PUT',  //put holo jodi user na thake tahole add korbe ar jodi thake tahole update korbe
             headers: {
@@ -54,7 +54,7 @@ const Inventory = () => {
             setQuantity(newQuantity)
             const item = { newQuantity }
             // console.log(item);
-            const url = `https://stark-oasis-89448.herokuapp.com/info/${id}`;
+            const url = `https://bike-manager.onrender.com/info/${id}`;
             setLoading(true)
             fetch(url, {
                 method: 'PUT',  //put holo jodi user na thake tahole add korbe ar jodi thake tahole update korbe
